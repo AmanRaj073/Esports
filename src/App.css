@@ -1,38 +1,846 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Teko:wght@300..700&display=swap');
+    *{
+      font-family: "Teko", sans-serif;
+      /* background-color: #090909 !important; */
+    }
+
+    .bg-black{
+      background-color: #090909 !important;
+    }
+    .color-green{
+      color: #ccff00;
+    }
+    .landing-page {
+      width: 100%;
+      height: 100vh;
+      /* position: relative; */
+      /* overflow: hidden; */
+      background-color: #090909;
+      font-family: "Teko", sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height:140%; 
+      letter-spacing: 0%;
+    }
+/* Navbar */
+    /* Fixed Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+  z-index: 10;
+  background: transparent;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-left, .navbar-right {
+  display: flex;
+  gap: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.nav-link:hover, .nav-link.active {
+  border-bottom: 1px solid #ccff00;
+  color: #ccff00;
+  margin-bottom: -1px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.logo-img {
+  width: 70px;
+  height: auto;
+}
+
+/* Hamburger Icon (Initially Hidden) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24px;
+  width: 30px;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+}
+.title-text{
+  font-size: 100px;
+}
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .navbar-left, .navbar-right {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  .title-text {
+    font-size: 50px;
+  }
+  
+  @media (max-width: 576px) {
+    .title-text {
+      font-size: 48px;
+      padding: 0 !important;
+    }
+  }
+  
+  .navbar-right.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px; /* Adjust based on navbar height */
+    right: 10px;
+    background-color: #333;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 200px;
+    padding: 10px;
+  }
+
+  .navbar-right.open .nav-link {
+    margin: 10px 0;
+    color: white;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Home Slider */
+
+    .slider-container {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      /* padding-bottom: 140px; */
+    }
+
+    .slides {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      width: 33.333%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide-content {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mobile-gaming {
+      background-color: #090909;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gaming-hand {
+      width: 80%;
+      height: 80%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .team-collab {
+      background-color: #090909;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .team-hands {
+      width: 80%;
+      height: 80%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .content-creation {
+      background-color: #090909;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .creator-workspace {
+      width: 80%;
+      height: 80%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .slider-nav {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      z-index: 5;
+    }
+
+    .slide-counter {
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .progress-bar {
+      width: 200px;
+      height: 2px;
+      background-color: rgba(255, 255, 255, 0.3);
+      position: relative;
+    }
+
+    .progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #ccff00;
+      transition: width 0.3s ease;
+    }
+
+    .slider-dots {
+      display: flex;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #ccff00;
+    }
+
+
+    /* Home Slider */
+    
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      /* background: black; */
+    
+      /* Center slide text vertically */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .swiper-pagination-bullet {
+      background-color: #ccc; /* your desired color for inactive dots */
+      width: 30px;              /* Length of the bar */
+      height: 4px;              /* Thickness of the bar */
+      border-radius: 0;         /* Remove roundness */
+      margin: 0 4px !important; /* Space between bars */
+      transition: background 0.3s;
+    }
+    
+    /* Change color of active pagination dot */
+    .swiper-pagination-bullet-active {
+      background-color:  #ccff00; /* your desired color for active dot */
+    }
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    
+    .dim-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(20, 20, 20, 0.4); /* Adjust darkness here */
+      pointer-events: none; /* Allow click-through */
+    }
+    
+    /* Pubg Card Slider */
+    .esport-section{
+      background-color: #090909;
+      background-image: "./assets/S8ulAssets/Backgroundlines.png";
+    }
+    .esport-text{
+      font-weight: 400 !important;
+      line-height:140%; 
+      font-size: 45px !important;
+      letter-spacing: 0%;
+      color: white;
+      font-family: "Teko", sans-serif;
+      padding-top: 50px;
+      padding-bottom: 60px;
+    }
+    .cursor-pointer {
+      cursor: pointer;
+    }
+    
+    /* Our Parnters */
+    .partner-text{
+      font-weight: 600;
+      color:#C7F242;
+    }
+    .achiement{
+      font-size: 64px;
+    }
+    .achiement-text{
+      font-weight: 600;
+      color:#C7F242;
+      font-size: 64px;
+    }
+
+    /* Our Partners */
+    .partner-bg {
+      background-image: url('./assets/S8ul/S8ul/OurPartners1.svg');
+      background-repeat: no-repeat;
+      background-size: contain; /* Ensures entire image fits, no cropping */
+      background-position: center;
+    }
+    
+    
+
+    /* Recent Content */
+    .recent-content{
+      /* background-image: url('./assets/RecentContent.png'); */
+      background-repeat: no-repeat;
+    }
+    .poster1{
+      width: 650px;
+      height: 353px;
+    }
+
+    .our-creators{
+      /* background-image: url("./assets/S8ulAssets/Container Divider.png"); */
+      /* background-repeat: no-repeat; */
+    
+    }
+    .our-creators-btn{
+      padding: 12px 24px 12px 24px;
+      background: #C7F242;
+      border: none;
+    }
+
+    .blog-section{
+      /* background-image: url("./assets/S8ulAssets/Blogspot.svg"); */
+    }
+    .framed-box {
+      position: relative;
+      display: inline-block;
+      background-color: white; /* or your background */
+    }
+    
+    .corner {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-color: black;
+    }
+    
+    .top-left {
+      top: 0;
+      left: 0;
+      border-top: 10px solid;
+      border-left: 10px solid;
+    }
+    
+    .top-right {
+      top: 0;
+      right: 0;
+      border-top: 10px solid;
+      border-right: 10px solid;
+    }
+    
+    .bottom-left {
+      bottom: 0;
+      left: 0;
+      border-bottom: 10px solid;
+      border-left: 10px solid;
+    }
+    
+    .bottom-right {
+      bottom: 0;
+      right: 0;
+      border-bottom: 10px solid;
+      border-right: 10px solid;
+    }
+    .image-hover-box {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Our Blog  */
+    .image-hover-img {
+      transition: all 0.4s ease;
+      filter: grayscale(80%);
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    
+    .hover-text {
+      position: absolute;
+      font-family:Arial, Helvetica, sans-serif;
+      bottom: 10px;
+      left: 20px;
+      color: white;
+      font-weight: 300;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-style: italic;
+      z-index: 1; /* Make sure text is above the progress bar */
+    }
+    
+    .progress-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      height: 2px; 
+      background-color: #fff;
+      transition: width 0.4s ease;
+    }
+    
+    .image-hover-box:hover .image-hover-img {
+      filter: none;
+      transform: scale(1.05);
+    }
+    
+    .image-hover-box:hover .progress-line {
+      width: 100%;
+    }
+    
+    
+
+    
+    .footer-bg {
+      /* background-image: url('./assets/S8ul/S8ul/Background.svg'); */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%; /* ✅ Stretch image to fill entire container */
+      width: 100%;
+      height: 300px; /* ✅ You must give height, otherwise nothing to stretch into */
+    }
+    
+    .second-img{
+      background-image: url('./assets/S8ul/S8ul/Games2.svg');
+    }
+    
+    .heart-icon {
+      transition: transform 0.2s ease;
+    }
+    
+    .heart-icon.clicked {
+      transform: scale(1.3);
+    }
+    
+    .text-muted{
+      color:#FFFFFF99;
+    }
+
+    .dm-font{
+      font-family: "DM Sans", sans-serif;
+    }
+    .text-light-emphasis{
+      font-weight: 500;
+    }
+    .text-light-emphasis:hover{
+      font-weight: 500;
+      color: #FFFFFF99 !important;
+    }
+
+
+    .pubg-slider-wrapper {
+      width: 100%;
+      overflow: hidden;
+      background-color: #090909;
+      padding: 40px 0;
+      
+      position: relative;
+    
+    }
+    
+    .pubg-slider-track {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.5s ease;
+      position: relative;
+      will-change: transform; /* Optimize for animations */
+    }
+    
+    .pubg-slider-track.transition {
+      transition: transform 0.5s ease;
+    }
+    
+    .pubg-slider-track.no-transition {
+      transition: none;
+    }
+    
+    .pubg-slide {
+      flex: 0 0 200px;
+      transition: all 0.3s ease;
+      opacity: 0.5;
+      transform: scale(0.9);
+    }
+    
+    .pubg-slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      pointer-events: none; /* Prevent image drag */
+    }
+    
+    .pubg-slide.active-slide {
+      transform: scale(1.1);
+      opacity: 1;
+      z-index: 2;
+      position: relative;
+    }
+    
+    /* Optional: Add hover effects */
+    .pubg-slide:not(.active-slide):hover {
+      opacity: 0.8;
+      transform: scale(1);
+      cursor: pointer;
+    }
+    
+    /* Navigation buttons styling */
+    .esport-text {
+      position: relative;
+      z-index: 3;
+    }
+    
+    .cursor-pointer {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .cursor-pointer:hover {
+      transform: scale(1.1);
+    }
+    
+    .cursor-pointer:active {
+      transform: scale(0.95);
+    }
+
+
+
+    .shop-section{
+      padding-top: 100px;
+    }
+
+    .no-gutters {
+      margin-right: 0;
+      margin-left: 0;
+    }
+    .no-gutters > .col,
+    .no-gutters > [class*="col-"] {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+    .flex-fill{
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centers content vertically */
+      align-items: center; /* Centers content horizontally */
+      border-left: 1px solid #333;
+      border-right: 1px solid #333;
+      color: #fff;
+      font-size: 20px;
+      text-align: center; /* Centers text horizontally */
+      white-space: normal; /* Ensures text wraps */
+      padding: 10px; /* Optional, adds spacing */
+      height: 100%;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none; /* Chrome, Safari and Opera */
+    }
+    
+    .esportteam-section{
+      padding-top: 100px;
+    }
+
+
+
+
+    /* Custom Swiper Styles for EsportsCard */
+.my-custom-slider * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.esport-section {
+  /* position: relative; */
+  /* width: 100%; */
+  /* margin: 3rem auto; */
+  /* padding: 2rem 0; */
+  /* overflow: hidden;   */
+}
+
+.esport-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* margin-bottom: 2rem; */
+}
+
+.my-custom-swiper-container {
+  position: relative;
+  width: calc(min(100rem, 100%));
+  margin: 0 auto;
+}
+
+.my-custom-swiper {
+  width: 100%;
+  /* padding: 60px 0 95px 0; */
+}
+
+.my-custom-swiper-slide {
+  padding-top: 25px;
+  width: 40rem;
+  height: 45rem;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  position: relative;
+  border-radius: 12px;
+  /* box-shadow: -1px 5px 15px rgba(0, 0, 0, 0.12); */
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Scale up active slide but maintain aspect ratio */
+.my-custom-swiper-slide-active {
+  transform: scale(1.15);
+  z-index: 10;
+}
+
+.my-custom-swiper-slide h3 {
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-bottom: 0.625rem;
+  letter-spacing: 0.8px;
+  position: relative;
+}
+
+.my-custom-swiper-slide p {
+  color: #fff;
+  line-height: 1.6;
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.my-custom-slide-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  width: 90%;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Container for the image to prevent cropping */
+.card-image-container {
+  width: 100%;
+  max-height: 140px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Image styling to ensure no cropping */
+.card-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* This ensures the image is not cropped */
+  transition: transform 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Ensuring the active slide image is fully visible */
+.my-custom-swiper-slide-active .card-image {
+  max-height: 100%;
+}
+
+
+.my-custom-author {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  position: absolute;
+  bottom: -90px;
+  width: 100%;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.my-custom-author img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3.5px solid white;
+}
+
+.my-custom-author span {
+  color: #111;
+  display: block;
+  margin: 5px 0 10px 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.my-custom-author ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.my-custom-swiper-slide-active .my-custom-author {
+  display: grid;
+  opacity: 1;
+}
+
+/* Custom navigation buttons */
+.my-custom-swiper-button-prev,
+.my-custom-swiper-button-next {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease;
+}
+
+.my-custom-swiper-button-prev:hover,
+.my-custom-swiper-button-next:hover {
+  transform: scale(1.1);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .esport-text {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .my-custom-swiper-slide {
+    width: 8rem;
+    height: 18rem;
+  }
+  
+  .my-custom-swiper-slide h3 {
+    font-size: 1.5rem;
+  }
+  
+  .card-image-container {
+    max-height: 110px;
+  }
+}
+
+/* Teams Memebr Images */
+/* Default Styles (larger screens) */
+.teams-wrapper {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  max-width: 250px; /* Controls the card width */
+  flex-grow: 1;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 24px; /* Default size */
+}
+
+/* For smaller screens (mobile) */
+@media (max-width: 576px) {
+  .team-card {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .team-title {
+    font-size: 18px; /* Smaller font size for mobile */
   }
 }
