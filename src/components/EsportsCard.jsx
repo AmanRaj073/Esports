@@ -133,9 +133,9 @@ const EsportsCard = () => {
                     alt={`pubg-team-${index}`}
                     className="card-image"
                   />
-                  <div className="card-hover-text">
+                  {/* <div className="card-hover-text">
                     {teamDescriptions[index % teamDescriptions.length]}
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="my-custom-author">
