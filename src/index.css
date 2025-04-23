@@ -1,4 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+@media (max-width: 767.98px) {
+    .esport-text {
+      /* font-size: 28px !important;      Smaller font size for mobile */
+      padding-top: 25px;
+      padding-bottom: 30px;
+      /* text-align: center;              Optionally center the text on mobile */
+    }
+  }
+@media (max-width: 767.98px) {
+.achiement {
+  font-size: 32px; /* or any smaller size */
+}
+.achiement-text {
+  font-size: 32px; /* match or slightly vary */
+  font-weight: 600;
+  color: #C7F242;
+}
+}
+
+/* Ensure the images are visible on larger screens */
+.left-arrow, .right-arrow {
+display: block;
+}
+
+/* Center the button and hide arrows on small screens */
+@media (max-width: 768px) {
+.left-arrow, .right-arrow {
+  display: none; /* Hide arrows on small screens */
+}
+
+.d-flex {
+  justify-content: center; /* Center the button */
+}
+}
