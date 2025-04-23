@@ -2,12 +2,12 @@ import Navbar from "../common/Navbar";
 import HomeSlider from "../components/HomeSlider";
 
 import EsportsCard from "../components/EsportsCard";
-import Divider1 from '../assets/S8ulAssets/Container Divider.png'
+import Divider1 from "../assets/S8ulAssets/Container Divider.png";
 import OurPartners from "../components/OurPartners";
 import RecentContent from "../components/RecentContent";
 import OurCreators from "../components/OurCreators";
 import OurBlogspot from "../components/OurBlogspot";
-import Divider from "../assets/S8ulAssets/Dividers.svg"
+import Divider from "../assets/S8ulAssets/Dividers.svg";
 import Footer from "../common/Footer";
 export default function EsportsLandingPage() {
   return (
@@ -27,22 +27,24 @@ export default function EsportsLandingPage() {
       </div>
 
       {/* Our Parnters */}
-      <OurPartners/>
+      <OurPartners />
 
       {/* Recent Contents */}
-      <RecentContent/>
+      <RecentContent />
 
       {/* Our Creators */}
-      <OurCreators/>
+      <OurCreators />
 
       {/* Our Blogspot */}
-      <OurBlogspot/>
+      <OurBlogspot />
 
       <div className="bg-black p-5 d-flex justify-content-center">
-        
-        <img src={Divider} alt="" />
+        <div className="container d-flex justify-content-center">
+          <img src={Divider} alt="" className="img-fluid" />
+        </div>
       </div>
-      <Footer/>
+
+      <Footer />
     </div>
   );
 }

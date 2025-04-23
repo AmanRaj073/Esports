@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="container footer-bg">
         <div className="row">
           {/* Left: Logo & Description */}
-          <div className="col-md-4 mb-4">
+          <div className="col-12 col-md-8 mb-4 bg-black">
             <img src={logo} alt="S8UL Logo" className="mb-3" style={{ height: 60 }} />
-            <p className="">
+            <p>
               S8UL IS A GLOBAL NAME IN ESPORTS AND GAMING CONTENT, HEADQUARTERED IN MUMBAI, INDIA.
             </p>
             {/* Social Icons */}
@@ -21,11 +21,10 @@ const Footer = () => {
           </div>
 
           {/* Right: Quick Links + About */}
-          <div className="col-md-8 d-flex justify-content-end align-items-start">
-            {/* Wrapper for Quick Links and About */}
-            <div className="d-flex">
+          <div className="col-12 col-md-4 bg-black">
+            <div className="d-flex flex-column flex-md-row justify-content-between">
               {/* Quick Links */}
-              <div className="me-5">
+              <div className="mb-4 mb-md-0 me-md-5">
                 <h5 className="dm-font">Quick links</h5>
                 <ul className="list-unstyled">
                   <li className="mb-2">
