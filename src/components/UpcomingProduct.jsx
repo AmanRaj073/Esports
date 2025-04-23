@@ -83,13 +83,12 @@ const UpcomingProduct = () => {
   ];
 
   return (
-    <div className="bg-black">
+    <div className="bg-black ">
       {/* Category */}
-      <div
-        className="w-100"
-        style={{ borderTop: "1px solid #333", borderBottom: "1px solid #333" }}
-      >
-        <div className="d-flex px-5 overflow-auto hide-scrollbar">
+      <div className="w-100" style={{ border: "1px solid #333" }}>
+        <div className="container">
+
+        <div className="d-flex flex-wrap w-100" >
           {[
             "ALL PRODUCTS",
             "ACCESSORIES",
@@ -100,14 +99,15 @@ const UpcomingProduct = () => {
             "PANTS",
             "CREATORS",
           ].map((cat) => (
-            <div key={cat} className="p-3 flex-fill text-nowrap text-white">
+            <div key={cat} className="p-3 flex-fill text-nowrap text-white" style={{ border: "1px solid #333" }}>
               {cat}
             </div>
           ))}
         </div>
+        </div>
       </div>
 
-      <div className="container">
+      <div className="container pt-5">
         <div className="d-flex flex-wrap justify-content-between align-items-center mb-2">
           {/* Left: Headings */}
           <div className="d-flex gap-3">
@@ -118,9 +118,8 @@ const UpcomingProduct = () => {
               PRODUCTS
             </h2>
           </div>
-
-          {/* Right: Arrow Buttons */}
-          <div className="d-flex gap-3">
+          {/* Right: Arrow Buttons (Only visible on desktop) */}
+          <div className="d-flex gap-3 d-none d-md-flex">
             <img
               src={leftArrow}
               alt="left button"
@@ -146,7 +145,7 @@ const UpcomingProduct = () => {
             scrollBehavior: "smooth",
             paddingLeft: "15px", // Starting padding to prevent cut-off
             paddingRight: "15px",
-            justifyContent:"start",
+            justifyContent: "start",
           }}
         >
           {jerseys.map((jersey) => (
@@ -208,6 +207,22 @@ const UpcomingProduct = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Mobile Arrow Buttons (Centered) */}
+      <div className="d-md-none d-flex justify-content-center mt-3">
+        <img
+          src={leftArrow}
+          alt="left button"
+          className="cursor-pointer mx-2"
+          onClick={handlePrevious}
+        />
+        <img
+          src={rightArrow}
+          alt="right button"
+          className="cursor-pointer mx-2"
+          onClick={handleNext}
+        />
       </div>
 
       <Divider />
