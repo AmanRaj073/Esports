@@ -23,6 +23,13 @@ const Navbar = () => {
         <img src={logo} alt="2600 Logo" className="logo-img" />
       </NavLink>
 
+      {/* Right-side Links for Desktop */}
+      <div className="navbar-right">
+        <NavLink to="/blog" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>BLOG</NavLink>
+        <NavLink to="/about" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>ABOUT US</NavLink>
+        <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>CONTACT US</NavLink>
+      </div>
+
       {/* Hamburger Icon */}
       <div className="hamburger" onClick={toggleMenu}>
         <span className="bar"></span>
@@ -30,8 +37,11 @@ const Navbar = () => {
         <span className="bar"></span>
       </div>
 
-      {/* Right-side Links for Desktop (Only Blog, About Us, and Contact Us in Hamburger Menu) */}
-      <div className={`navbar-right ${isOpen ? 'open' : ''}`}>
+      {/* Mobile Menu (includes ALL links) */}
+      <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
+        <NavLink to="/esports" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>ESPORTS</NavLink>
+        <NavLink to="/shop" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>SHOP</NavLink>
+        <NavLink to="/content" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>CONTENT</NavLink>
         <NavLink to="/blog" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>BLOG</NavLink>
         <NavLink to="/about" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>ABOUT US</NavLink>
         <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>CONTACT US</NavLink>
