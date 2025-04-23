@@ -70,7 +70,7 @@ const Esports = () => {
   return (
     <div className="landing-page">
       <Navbar />
-      <section className="esportteam-section p-5 bg-black ">
+      <section className="esportteam-section  bg-black ">
         <TeamImage
           img1={Main1img}
           img2={Main2img}
@@ -90,7 +90,7 @@ const Esports = () => {
         </div>
       </div>
 
-      <section className="p-5 bg-black">
+      <section className=" bg-black">
         <TeamImage img1={Main4img} img2={Main3img} title="POKEMON UNITE" />
       </section>
       <section className="team-members-section bg-black d-flex justify-content-center pt-5">
@@ -104,7 +104,7 @@ const Esports = () => {
         </div>
       </div>
 
-      <section className="p-5 bg-black">
+      <section className=" bg-black">
         <TeamImage img1={Main5img} img2={Main6img} title="APEX LEGENDS" />
       </section>
       <section className="team-members-section bg-black d-flex justify-content-center pt-5">
@@ -118,7 +118,7 @@ const Esports = () => {
         </div>
       </div>
 
-      <section className="esportteam-section p-5 bg-black ">
+      <section className="esportteam-section  bg-black ">
         <TeamImage img1={Main1img} img2={Main2img} title="CODM" />
       </section>
       <section className="team-members-section bg-black d-flex justify-content-center pt-5">
@@ -133,7 +133,7 @@ const Esports = () => {
       </div>
 
 
-      <section className="esportteam-section p-5 bg-black ">
+      <section className="esportteam-section  bg-black ">
         <TeamImage img1={Main7img} img2={Main2img} title="VOLRANT" />
       </section>
       <section className="team-members-section bg-black d-flex justify-content-center pt-5">

@@ -89,7 +89,7 @@ const UpcomingProduct = () => {
         className="w-100"
         style={{ borderTop: "1px solid #333", borderBottom: "1px solid #333" }}
       >
-        <div className="d-flex justify-content-center px-5 overflow-auto hide-scrollbar">
+        <div className="d-flex px-5 overflow-auto hide-scrollbar">
           {[
             "ALL PRODUCTS",
             "ACCESSORIES",
@@ -107,93 +107,107 @@ const UpcomingProduct = () => {
         </div>
       </div>
 
-      <div className="d-flex justify-content-between align-items-center px-5 py-5">
-        <div className="d-flex gap-3">
-          <h2 className="text-white" style={{ fontSize: "48px" }}>
-            UPCOMING
-          </h2>
-          <h2 className="color-green" style={{ fontSize: "48px" }}>
-            PRODUCTS
-          </h2>
-        </div>
+      <div className="container">
+        <div className="d-flex flex-wrap justify-content-between align-items-center mb-2">
+          {/* Left: Headings */}
+          <div className="d-flex gap-3">
+            <h2 className="text-white" style={{ fontSize: "48px" }}>
+              UPCOMING
+            </h2>
+            <h2 className="color-green" style={{ fontSize: "48px" }}>
+              PRODUCTS
+            </h2>
+          </div>
 
-        {/* Arrow Buttons */}
-        <div className="d-flex gap-3">
-          <img
-            src={leftArrow}
-            alt="left button"
-            className="cursor-pointer"
-            onClick={handlePrevious}
-          />
-          <img
-            src={rightArrow}
-            alt="right button"
-            className="cursor-pointer"
-            onClick={handleNext}
-          />
+          {/* Right: Arrow Buttons */}
+          <div className="d-flex gap-3">
+            <img
+              src={leftArrow}
+              alt="left button"
+              className="cursor-pointer"
+              onClick={handlePrevious}
+            />
+            <img
+              src={rightArrow}
+              alt="right button"
+              className="cursor-pointer"
+              onClick={handleNext}
+            />
+          </div>
         </div>
       </div>
 
       {/* Scrollable Cards */}
-      <div
-        ref={scrollRef}
-        className="d-flex gap-3 pb-5 px-5 hide-scrollbar"
-        style={{ overflowX: "auto", scrollBehavior: "smooth" }}
-      >
-        {jerseys.map((jersey) => (
-          <div
-            key={jersey.id}
-            className="bg-black p-4 flex-shrink-0 position-relative"
-            style={{ border: "1px solid #333", width: "100%", maxWidth: "297px" }}
-          >
-            <div className="position-relative">
-              <img
-                src={jersey.image}
-                alt={`Volleyball Jersey ${jersey.id}`}
-                className="img-fluid"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  objectFit: "cover",
-                  maxHeight: "343px",
-                }}
-              />
-              <button
-                className="position-absolute top-0 end-0 m-2 text-white border-0 bg-transparent"
-                onClick={() => toggleLike(jersey.id)}
-              >
-                <i
-                  className={`${
-                    likedItems.includes(jersey.id)
-                      ? "fa-solid fa-heart text-danger"
-                      : "fa-regular fa-heart"
-                  } fa-lg heart-icon ${
-                    clickedId === jersey.id ? "clicked" : ""
-                  }`}
+      <div className="container">
+        <div
+          ref={scrollRef}
+          className="d-flex gap-3 pb-4 overflow-x-auto hide-scrollbar"
+          style={{
+            scrollBehavior: "smooth",
+            paddingLeft: "15px", // Starting padding to prevent cut-off
+            paddingRight: "15px",
+            justifyContent:"start",
+          }}
+        >
+          {jerseys.map((jersey) => (
+            <div
+              key={jersey.id}
+              className="bg-black p-3 p-md-4 flex-shrink-0 position-relative"
+              style={{
+                border: "1px solid #333",
+                width: "100%",
+                maxWidth: "240px",
+              }}
+            >
+              <div className="position-relative">
+                <img
+                  src={jersey.image}
+                  alt={`Volleyball Jersey ${jersey.id}`}
+                  className="img-fluid"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                    maxHeight: "250px",
+                  }}
                 />
-              </button>
+                <button
+                  className="position-absolute top-0 end-0 m-2 text-white border-0 bg-transparent"
+                  onClick={() => toggleLike(jersey.id)}
+                >
+                  <i
+                    className={`${
+                      likedItems.includes(jersey.id)
+                        ? "fa-solid fa-heart text-danger"
+                        : "fa-regular fa-heart"
+                    } fa-lg heart-icon ${
+                      clickedId === jersey.id ? "clicked" : ""
+                    }`}
+                  />
+                </button>
 
-              {/* Coming Soon Logo Centered */}
-              <img
-                src={comingsoonlogo}
-                alt="Coming Soon"
-                className="position-absolute top-50 start-50 translate-middle"
-                style={{ width: "200px", opacity: 0.9 }} // adjust size and opacity as needed
-              />
-            </div>
-
-            <div className="mt-4">
-              <div
-                style={{ backgroundColor: "#1E1E1E" }}
-                className="text-secondary fs-6 py-1 px-2 d-inline-block mb-2 w-auto"
-              >
-                JERSEYS
+                {/* Coming Soon Logo Centered */}
+                <img
+                  src={comingsoonlogo}
+                  alt="Coming Soon"
+                  className="position-absolute top-50 start-50 translate-middle"
+                  style={{ width: "140px", opacity: 0.85 }}
+                />
               </div>
 
-              <h6 className="text-white text-sm">{jersey.title}</h6>
+              <div className="mt-3 mt-md-4">
+                <div
+                  style={{ backgroundColor: "#1E1E1E" }}
+                  className="text-secondary fs-6 py-1 px-2 d-inline-block mb-2 w-auto"
+                >
+                  JERSEYS
+                </div>
+
+                <h6 className="text-white text-sm">{jersey.title}</h6>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <Divider />

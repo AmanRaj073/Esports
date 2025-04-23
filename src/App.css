@@ -302,6 +302,15 @@
       width: 100%;
       height: 100%;
     }
+
+    @media (max-width: 768px) {
+      .swiper {
+        width: 100%;
+        height: 50%; /* Set a fixed height for smaller screens */
+      }
+    }
+
+
     
     .swiper-slide {
       text-align: center;
@@ -387,11 +396,13 @@
 
     /* Our Partners */
     .partner-bg {
-      background-image: url('./assets/S8ul/S8ul/OurPartners1.svg');
+      /* background-image: url('./assets/S8ul/S8ul/OurPartners1.svg'); */
       background-repeat: no-repeat;
       background-size: contain; /* Ensures entire image fits, no cropping */
       background-position: center;
     }
+
+    
     
     
 
@@ -856,7 +867,7 @@
 }
 
 .team-card {
-  max-width: 250px; /* Controls the card width */
+  max-width: max-content; /* Controls the card width */
   flex-grow: 1;
   text-align: center;
 }
@@ -868,7 +879,7 @@
 /* For smaller screens (mobile) */
 @media (max-width: 576px) {
   .team-card {
-    max-width: 100%;
+    max-width: max-content;
     flex-basis: 100%;
   }
 
