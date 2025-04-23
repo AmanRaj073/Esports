@@ -39,6 +39,7 @@ const Navbar = () => {
 
       {/* Mobile Menu (includes ALL links) */}
       <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
+        <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>HOME</NavLink>
         <NavLink to="/esports" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>ESPORTS</NavLink>
         <NavLink to="/shop" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>SHOP</NavLink>
         <NavLink to="/content" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>CONTENT</NavLink>

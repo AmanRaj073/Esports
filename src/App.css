@@ -711,7 +711,7 @@
 
 .my-custom-swiper-slide {
   padding-top: 25px;
-  width: 40rem;
+  width: 45rem;
   height: 45rem;
   display: flex;
   flex-direction: column;
@@ -722,6 +722,7 @@
   transition: all 0.3s ease;
   overflow: hidden;
 }
+
 
 /* Scale up active slide but maintain aspect ratio */
 .my-custom-swiper-slide-active {
@@ -760,7 +761,7 @@
 /* Container for the image to prevent cropping */
 .card-image-container {
   width: 100%;
-  max-height: 140px;
+  /* max-height: 140px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -845,7 +846,8 @@
   
   .my-custom-swiper-slide {
     width: 8rem;
-    height: 18rem;
+    /* height: 18rem; */
+    height: 25rem;
   }
   
   .my-custom-swiper-slide h3 {
@@ -853,7 +855,7 @@
   }
   
   .card-image-container {
-    max-height: 110px;
+    /* max-height: 110px; */
   }
 }
 
