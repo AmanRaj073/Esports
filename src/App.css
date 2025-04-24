@@ -845,9 +845,8 @@
   }
   
   .my-custom-swiper-slide {
-    width: 8rem;
-    /* height: 18rem; */
-    height: 25rem;
+    width: 25rem;
+    height: 35rem;
   }
   
   .my-custom-swiper-slide h3 {
