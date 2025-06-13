@@ -6,6 +6,7 @@ import poster from "../assets/Poster.png";
 import poster2 from "../assets/Poster2.png";
 import leftArrow from "../assets/leftarrow.svg";
 import rightArrow from "../assets/righArrow.svg";
+import Gallery from "../components/AllTeams";
 const Content = () => {
   const scrollRef = useRef(null);
 
@@ -21,10 +22,13 @@ const Content = () => {
       {/* Transparent Navbar */}
       <Navbar />
 
-      <section className="esportteam-section container bg-black"></section>
+      <section className="esportteam-section bg-black">
+        <Gallery/>
+      </section>
 
-      <div className="bg-black container">
-        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center px-3 px-md-5 py-4">
+      <div className="bg-black">
+      <div className=" container bg-black">
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center px-3 px-md-5 py-4">
           {/* Heading */}
           <div className="d-flex flex-sm-row gap-2 gap-md-3">
             <h2 className="text-white" style={{ fontSize: "36px" }}>
@@ -78,6 +82,7 @@ const Content = () => {
       </div>
 
       <Footer />
+    </div>
     </div>
   );
 };

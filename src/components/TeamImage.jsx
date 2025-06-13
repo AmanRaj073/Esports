@@ -4,8 +4,8 @@ const TeamImage = ({ title, img1, img2, slogan }) => {
   return (
     <div className="p-4 bg-black">
       <div className="container">
-        <div className="row align-items-center justify-content-center">
-          <div className="col-12 col-md-6 mb-4 mb-md-0">
+        <div className=" align-items-center justify-content-center">
+          <div className=" mb-4 mb-md-0">
             <div className="d-flex flex-column flex-md-row gap-3">
               <p
                 className="title-text py-5 py-md-0"
@@ -29,11 +29,21 @@ const TeamImage = ({ title, img1, img2, slogan }) => {
                 </p>
               )}
             </div>
-            <img src={img1} alt="Team 1" className="img-fluid mt-3" />
+            <img
+              src={img1}
+              alt="Team 1"
+              style={{
+                width: "-webkit-fill-available", 
+                height: "80vh", 
+                objectFit: "cover",
+                objectPosition: "top", 
+                display: "block", 
+              }}
+            />
           </div>
-          <div className="col-12 col-md-6 second-img ">
+          {/* <div className="col-12 col-md-6 second-img ">
             <img src={img2} alt="Team 2" className="img-fluid mt-3 mt-md-5 " />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
