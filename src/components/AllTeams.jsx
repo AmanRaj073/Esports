@@ -4,7 +4,7 @@ import twitter from "../assets/Twitter.png";
 import youtube from "../assets/Youtube.png"
 
 const importAll = (r) => r.keys().map(r);
-const images = importAll(require.context('../assets/AllTeamsImg', false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context('../assets/AllCc', false, /\.(png|jpe?g|svg)$/));
 
 const Gallery = () => {
   // Sample data - replace with your actual data
